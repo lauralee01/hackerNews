@@ -1,0 +1,45 @@
+.navbar-content {
+	font-family: 'Sedgwick Ave Display', cursive;;
+	padding: 0 0 0 50px;
+}
+.collapsibleNavbar {
+	background-color: rgba(255,255,255,0.8);
+	padding: 0px 30px;
+	box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+}
+.collapsibleNavbar ul {
+	list-style-type: none;
+	padding: 0;
+}
+.collapsibleNavbar a {
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+	color: #000;
+}
+.collapsibleNavbar label {
+	font-family: 'Sedgwick Ave Display', cursive;
+	font-size: 56px;
+	display: block;
+	cursor: pointer;
+	background: url(menu.png) no-repeat left center;
+	padding: 10px 0 10px 50px;
+}
+input#menu {
+	display: none;
+}
+.navbar-content {
+	max-height: 0;
+	overflow: hidden;
+	font-family: 'Sedgwick Ave Display', cursive;
+	padding: 0 0 0 50px;
+}
+input:checked ~ label {
+	background-image: url(close.png);
+}
+input:checked ~ .navbar-content {
+	max-height: 100%;
+}
+.footer {
+	text-align: center;
+}
