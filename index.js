@@ -13,8 +13,8 @@ fetch("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")
 					.then(data => {
 						results += `
 							<ul class="card">
-								<li class="list"><strong>${index}</strong>. ${data.title}</li>
-								<li class="list">${data.score} points by <em>${data.by}</em> &mdash; ${new Date(
+								<li class="elements"><strong>${index}</strong>. ${data.title}</li>
+								<li>${data.score} points by <em>${data.by}</em> &mdash; ${new Date(
 									data.time).getMinutes()} minutes ago | ${data.descendants} comments</li>
 							</ul>
 							`;
@@ -26,17 +26,17 @@ fetch("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")
 })
 .catch(err => console.log(err));
 search = () => {
-	let input,filter,newsList,li,i;
-		input = document.getElementsByClassName('hackersearch');
+	let input,filter,newsList,li,a,i;
+		input = document.getElementById('myInput');
 		filter = input.value.toUpperCase();
 		newsList = document.getElementsByClassName('card');
-		li = document.getElementsByClassName('list');
-
-			for (i = 0; i < li.length; i++) {
-				if(li.innerHTML.toUpperCase().indexOf(filter) > -1) {
-					li[i].style.display = "";
+		list = document.getElementsByClassName('elements');
+			for (i = 0; i < list.length; i++) {
+				a = li[i]
+				if(a.textContent.toUpperCase().indexOf(filter) > -1) {
+					list[i].style.display = "block";
 				} else {
-					li[i].style.display = "none";
+					list[i].style.display = "none";
 				}
 			}
 }
